@@ -16,16 +16,19 @@ if (Meteor.isClient) {
         this.route("home", {
             path: "/",
             waitOn: function () {
-
                 //subscribe to a collection
-                return Meteor.subscribe("oneSample", "sampleId123");
+                var subs = Meteor.subscribe("oneSample", "sampleId123");
+                console.log("in waitOn");
+                return  subs;
             },
             data: function () {
-
                 //create the data for the view
-                return {
+                var data = {
                     sample: Samples.findOne()
                 };
+                console.log("in data:", data);
+                return  data;
+
             }
         });
     });
