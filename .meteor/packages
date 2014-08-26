@@ -5,4 +5,5 @@
 
 standard-app-packages
 insecure
-iron-router
+iron:router
+
